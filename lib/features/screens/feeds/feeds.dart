@@ -79,35 +79,37 @@ class _FeedsPageState extends State<FeedsPage> {
           elevation: 1,
           centerTitle: true,
           backgroundColor: Colors.white,
-          title: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 1.0, vertical: 10.0),
-            child: Center(
+          leadingWidth: 120,
+          leading: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              children: [
+                SvgPicture.asset(AppAsset.icon1),
+                const SizedBox(
+                  width: 12,
+                ),
+                SvgPicture.asset(AppAsset.icon2),
+              ],
+            ),
+          ),
+          title: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Text('Feed', style: CustomStyle.kTitleStyle2),
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      SvgPicture.asset(AppAsset.icon1),
-                      const SizedBox(
-                        width: 12,
-                      ),
-                      SvgPicture.asset(AppAsset.icon2),
-                    ],
-                  ),
-                  Text('Feed', style: CustomStyle.kTitleStyle2),
-                  Row(
-                    children: [
-                      IconButton(
-                          // ignore: avoid_returning_null_for_void
-                          onPressed: () {},
-                          icon: SvgPicture.asset(AppAsset.clipIcon)),
-                      SvgPicture.asset(AppAsset.icon4),
-                    ],
-                  ),
+                  IconButton(
+                      // ignore: avoid_returning_null_for_void
+                      onPressed: () {},
+                      icon: SvgPicture.asset(AppAsset.clipIcon)),
+                  SvgPicture.asset(AppAsset.icon4),
                 ],
               ),
             ),
-          ),
+          ],
         ),
         body: Column(
           children: [
